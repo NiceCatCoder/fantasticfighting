@@ -8,7 +8,6 @@ import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelMonarchMecha extends EntityModel<Entity> {
-
 	private ModelRenderer xiabanshen;
 	private ModelRenderer xiabanshen_r1;
 	private ModelRenderer xiabanshen_r2;
