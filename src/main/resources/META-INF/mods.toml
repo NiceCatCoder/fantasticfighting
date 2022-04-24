@@ -1,0 +1,29 @@
+modLoader="javafml" #mandatory
+loaderVersion="[34,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+license="BreadNiceCatLicenceV1.2&GNUGeneralPublicLicenseV3.0"
+issueTrackerURL="https://gitee.com/Bread_NiceCat/fantasticfighting/issues" #optional
+[[mods]] #mandatory
+modId="fantasticfighting" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="Fantastic Fighting" #mandatory
+updateJSONURL="https://gitee.com/Bread_NiceCat/fantasticfighting/raw/master/update.json" #optional
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+logoFile="fantasticfighting.png" #optional
+credits="MineHeroStudio" #optional
+authors="Bread_NiceCat" #optional
+description='''
+A MineHeroStudio&Bread_NiceCat Mod
+'''
+[[dependencies.fantasticfighting]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[34,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+# Here's another dependency
+[[dependencies.fantasticfighting]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.3]"
+    ordering="NONE"
+    side="BOTH"

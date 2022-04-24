@@ -1,0 +1,8 @@
+{
+	//物品
+	"item.fantasticfighting.debug.toolkit":"调试工具包",
+	//创造模式物品栏
+	"itemGroup.fantasticfighting":"幻想乱斗",
+	//实体
+	"entity.monarch_mecha.name":"1号试验机"
+}

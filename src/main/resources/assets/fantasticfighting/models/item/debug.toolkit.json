@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "fantasticfighting:item/mineherostudio",
+        "layer1":"fantasticfighting:item/bread_nicecat"
+    }
+}
