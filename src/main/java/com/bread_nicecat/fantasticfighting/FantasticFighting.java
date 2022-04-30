@@ -3,9 +3,9 @@ package com.bread_nicecat.fantasticfighting;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.bread_nicecat.fantasticfighting.entity.ManagerEntity;
-import com.bread_nicecat.fantasticfighting.item.ItemDebugToolkit;
-import com.bread_nicecat.fantasticfighting.item.ManagerItem;
+import com.bread_nicecat.fantasticfighting.entity.EntityManager;
+import com.bread_nicecat.fantasticfighting.item.DebugToolkitItem;
+import com.bread_nicecat.fantasticfighting.item.ItemManager;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -22,7 +22,7 @@ public class FantasticFighting {
 		tab = new ItemGroup(MODID) {
 			@Override
 			public ItemStack createIcon() {
-				return new ItemStack(ManagerItem.ITEMS.get(ItemDebugToolkit.NAME));
+				return new ItemStack(ItemManager.ITEMS.get(DebugToolkitItem.NAME));
 			}
 		};
 		tab.setBackgroundImageName("fantasticfighting.png");
@@ -30,6 +30,6 @@ public class FantasticFighting {
 
 	public FantasticFighting() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		ManagerEntity.register(bus);
+		EntityManager.register(bus);
 	}
 }

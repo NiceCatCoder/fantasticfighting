@@ -14,12 +14,12 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 @EventBusSubscriber(bus = Bus.MOD)
-public class ManagerItem {
+public class ItemManager {
 	public static final HashMap<String, Item> ITEMS = new HashMap<>();
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
-		ITEMS.put(ItemDebugToolkit.NAME, new ItemDebugToolkit());
+		ITEMS.put(DebugToolkitItem.NAME, new DebugToolkitItem());
 		for (Item item : ITEMS.values())
 			event.getRegistry().register(item);
 	}

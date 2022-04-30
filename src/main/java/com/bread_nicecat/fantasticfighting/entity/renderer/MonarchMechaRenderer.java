@@ -1,7 +1,7 @@
 package com.bread_nicecat.fantasticfighting.entity.renderer;
 
 import com.bread_nicecat.fantasticfighting.entity.MonarchMechaEntity;
-import com.bread_nicecat.fantasticfighting.entity.ManagerEntity;
+import com.bread_nicecat.fantasticfighting.entity.EntityManager;
 import com.bread_nicecat.fantasticfighting.entity.renderer.model.BreadNiceCatModelBase;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -22,7 +22,7 @@ public class MonarchMechaRenderer extends EntityRenderer<Entity> {
 	public MonarchMechaRenderer(EntityRendererManager renderManager) {
 		super(renderManager);
 		// MODEL = new ModelMonarchMecha();
-		MODEL = new BreadNiceCatModelBase(ManagerEntity.getModelReader(MonarchMechaEntity.NAME + ".java_mcp"));
+		MODEL = new BreadNiceCatModelBase(EntityManager.getModelReader(MonarchMechaEntity.NAME + ".java_mcp"));
 	}
 
 	@Override
@@ -39,6 +39,6 @@ public class MonarchMechaRenderer extends EntityRenderer<Entity> {
 
 	@Override
 	public ResourceLocation getEntityTexture(Entity entity) {
-		return ManagerEntity.getEntityTexture(MonarchMechaEntity.NAME);
+		return EntityManager.getEntityTexture(MonarchMechaEntity.NAME);
 	}
 }

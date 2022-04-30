@@ -4,5 +4,5 @@
 	//创造模式物品栏
 	"itemGroup.fantasticfighting":"幻想乱斗",
 	//实体
-	"entity.monarch_mecha.name":"1号试验机"
+	"entity.fantasticfighting.monarch_mecha":"1号试验机"
 }
