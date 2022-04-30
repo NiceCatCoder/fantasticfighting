@@ -1,9 +1,12 @@
 package com.bread_nicecat.fantasticfighting.entity;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.HashMap;
 
 import com.bread_nicecat.fantasticfighting.FantasticFighting;
-import com.bread_nicecat.fantasticfighting.entity.renderer.RendererMonarchMecha;
+import com.bread_nicecat.fantasticfighting.entity.renderer.MonarchMechaRenderer;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
@@ -29,7 +32,7 @@ public class ManagerEntity {
 	public static final HashMap<String, RegistryObject<EntityType<? extends Entity>>> entities = new HashMap<>();
 
 	public static void register(IEventBus bus) {
-		registerEntity(EntityMonarchMecha.NAME, EntityMonarchMecha::new, 3.6f, 12.5f);
+		registerEntity(MonarchMechaEntity.NAME, MonarchMechaEntity::new, 3.6f, 12.5f);
 		ENTITY_TYPES.register(bus);
 	}
 
@@ -43,11 +46,21 @@ public class ManagerEntity {
 	@OnlyIn(Dist.CLIENT)
 	public static void render(FMLClientSetupEvent event) {
 		for (String name : entities.keySet()) {
-			RenderingRegistry.registerEntityRenderingHandler(entities.get(name).get(), RendererMonarchMecha::new);
+			RenderingRegistry.registerEntityRenderingHandler(entities.get(name).get(), MonarchMechaRenderer::new);
 		}
 	}
 
 	public static ResourceLocation getEntityTexture(String textureName) {
 		return new ResourceLocation(FantasticFighting.MODID, "textures/entity/" + textureName + ".png");
+	}
+
+	public static Reader getModelReader(String modelName) {
+		InputStream s = FantasticFighting.class
+				.getResourceAsStream("/assets/fantasticfighting/models/entity/" + modelName + ".B_NC_LOCK");
+		if (s == null) {
+			FantasticFighting.LOGGER.error("could not find model:" + modelName + ".B_NC_LOCK");
+			return null;
+		}
+		return new InputStreamReader(s);
 	}
 }
